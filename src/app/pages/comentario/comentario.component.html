@@ -1,0 +1,76 @@
+<section>
+  <mat-card>
+    <mat-card-header style="background-color: LightBlue;">
+        <mat-card-title><h3>Post: {{postSelecionado.titulo}}</h3></mat-card-title>
+        <mat-card-subtitle>
+          <p><b>Criado por <u>{{postSelecionado.usuario.nome}}</u> em {{postSelecionado.dataHoraFormatada}}</b></p>
+          <p><b>Quantidade de comentários: {{postSelecionado.comentarios.length}}</b></p> 
+        </mat-card-subtitle>
+    </mat-card-header>
+    <mat-card-content>
+      <p>
+      <p><b>Mensagem:</b></p>
+      <p>
+      <p><b>{{postSelecionado.texto}}</b></p>
+    </mat-card-content>
+  </mat-card>
+
+  <mat-card>
+    <!--
+    <mat-card-header style="background-color: yellow;">
+      <mat-card-subtitle>
+        <p><b>Registre o seu comentário</b></p>
+      </mat-card-subtitle>
+    </mat-card-header>
+    -->
+    <mat-card-content>
+      <mat-form-field>
+        <textarea matInput fullWidth placeholder="Escreva aqui seu comentário" [(ngModel)]="comentario.texto" name="texto" cols="80"
+          rows="5" maxlength="255" required></textarea>
+      </mat-form-field>
+      <p>
+        <mat-card-actions>
+          <button mat-raised-button class="btn-space" color="primary" (click)="criar()">
+            <mat-icon style="font-size: 22px;vertical-align: middle;">message</mat-icon> 
+             Comentar
+          </button>
+          <button mat-raised-button color="warn" (click)="limpar()" class="btn-space">
+            <mat-icon style="font-size: 22px;vertical-align: middle;">phonelink_erase</mat-icon> 
+             Limpar
+          </button>
+          <button mat-raised-button color="accent" (click)="voltar()">
+            <mat-icon style="font-size: 22px;vertical-align: middle;">arrow_back</mat-icon> 
+             Voltar para o blog
+          </button>
+      </mat-card-actions>
+    </mat-card-content>
+</mat-card>
+
+<!--
+
+  <div style="padding: 25px;">
+    <mat-accordion>
+      <mat-expansion-panel>
+        <p>
+          <mat-form-field>
+            <textarea matInput fullWidth placeholder="Escreva aqui seu comentário" [(ngModel)]="comentario.texto" name="texto" cols="80"
+              rows="5" maxlength="255" required></textarea>
+          </mat-form-field>
+          <p>
+          <button mat-raised-button class="btn-space" color="primary" (click)="criar()">
+            <mat-icon style="font-size: 22px;vertical-align: middle;">message</mat-icon> 
+             Comentar
+          </button>
+          <button mat-raised-button color="warn" (click)="limpar()" class="btn-space">
+            <mat-icon style="font-size: 22px;vertical-align: middle;">phonelink_erase</mat-icon> 
+             Limpar
+          </button>
+          <button mat-raised-button color="accent" (click)="voltar()">
+            <mat-icon style="font-size: 22px;vertical-align: middle;">arrow_back</mat-icon> 
+             Voltar para o blog
+          </button>
+      </mat-expansion-panel>
+    </mat-accordion>
+  </div>
+  -->
+</section>

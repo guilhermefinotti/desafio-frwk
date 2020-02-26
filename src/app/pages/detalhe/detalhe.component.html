@@ -1,0 +1,43 @@
+<section>
+      <mat-card>
+        <mat-card-header style="background-color: LightBlue;">
+            <mat-card-title><h3>Post: {{postSelecionado.titulo}}</h3></mat-card-title>
+            <mat-card-subtitle>
+              <p><b>Criado por <u>{{postSelecionado.usuario.nome}}</u> em {{postSelecionado.dataHoraFormatada}}</b></p>
+              <p><b>Quantidade de comentários: {{comentarios.length}}</b></p> 
+            </mat-card-subtitle>
+        </mat-card-header>
+        <mat-card-content>
+          <p>
+          <p>{{postSelecionado.texto}}</p>
+          <img src="{{'data:image/jpg;base64,' + postSelecionado.imagem}}" width="684" height="400"/>
+        </mat-card-content>
+      </mat-card>
+      <mat-card *ngFor=" let comentario of comentarios">
+        <mat-card-header style="background-color: yellow;">
+          <mat-card-subtitle>
+            <p><b>Comentário enviado por <u>{{comentario.usuario.nome}}</u> em {{comentario.dataHoraFormatada}}</b></p>
+          </mat-card-subtitle>
+      </mat-card-header>
+        <mat-card-content>
+            <p>
+            <p>{{comentario.texto}}</p>
+            <p>
+            <mat-card-actions>
+              <button mat-raised-button color="warn" *ngIf="comentario.usuario.id == usuarioLogado.id"
+                      matTooltip="Excluir esse post" (click)="excluirComentario(comentario.id)">
+                <mat-icon style="font-size: 22px;vertical-align: middle;">delete</mat-icon> 
+                Excluir
+            </button>
+          </mat-card-actions>
+        </mat-card-content>
+    </mat-card>
+
+  <br>
+
+  <button mat-raised-button color="accent" (click)="voltar()">
+    <mat-icon style="font-size: 22px;vertical-align: middle;">arrow_back</mat-icon> 
+     Voltar para o blog
+  </button>
+
+</section>

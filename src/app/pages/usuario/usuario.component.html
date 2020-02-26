@@ -1,0 +1,37 @@
+<section>
+    <div style="padding: 25px;">
+   <mat-accordion>
+     <mat-expansion-panel>
+       <mat-expansion-panel-header>
+         <mat-panel-title>
+           <h1>Cadastro de novos usuários </h1>
+         </mat-panel-title>
+       </mat-expansion-panel-header>
+       <p>
+       <mat-form-field>
+         <input matInput placeholder="Nome" [(ngModel)]="usuario.nome" name="nome" required>
+       </mat-form-field>
+       <p>
+       <mat-form-field>
+        <input matInput placeholder="Email" [(ngModel)]="usuario.email" name="email" required>
+       </mat-form-field>
+       <p>
+        <mat-form-field>
+         <input matInput placeholder="Senha" [(ngModel)]="usuario.senha" name="senha" type="password" required>
+        </mat-form-field>
+       <p>
+
+       <button mat-raised-button class="btn-space" color="primary" (click)="salvar()">
+        <mat-icon style="font-size: 22px;vertical-align: middle;">save</mat-icon> 
+         Registrar
+      </button>
+      <span></span>
+      <button mat-raised-button color="warn" (click)="limpar()">
+        <mat-icon style="font-size: 22px;vertical-align: middle;">phonelink_erase</mat-icon> 
+         Limpar
+      </button>
+     </mat-expansion-panel>
+   </mat-accordion>
+   </div>
+ </section>
+ 

@@ -1,0 +1,31 @@
+<mat-progress-spinner *ngIf="loading" color="accent" mode="indeterminate" style="margin:0 auto;"></mat-progress-spinner>
+<section>
+  <mat-card *ngFor=" let album of albuns">
+      <mat-card-content>
+          <h2>Álbum: {{album.titulo}}</h2>
+          <p>
+          <p>Descrição: {{album.descricao}}</p>
+          <p>
+          <h5>Criado por: {{album.usuario.nome}}</h5>
+          <p>
+      </mat-card-content>
+
+      <mat-card-actions style="vertical-align: bottom;">
+
+        <button mat-raised-button class="btn-space" color="accent"
+                  matTooltip="Visualizar os detalhes do álbum"
+                  (click)="detalhar(album.id)">
+                  <mat-icon style="font-size: 22px;vertical-align: middle;">photo_library</mat-icon>
+              Visualizar as fotos
+          </button>
+
+          <button mat-raised-button color="warn" *ngIf="album.usuario.id == usuarioLogado.id"
+                  matTooltip="Excluir esse álbum" (click)="excluir(album.id)">
+              <mat-icon style="font-size: 22px;vertical-align: middle;">delete</mat-icon> 
+              Excluir
+          </button>
+
+      </mat-card-actions>
+      <p>
+  </mat-card>
+</section>

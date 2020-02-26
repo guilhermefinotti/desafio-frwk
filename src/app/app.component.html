@@ -1,0 +1,38 @@
+<mat-toolbar color="primary">
+  <h4>Desafio Técnico - Blog Framework Systems</h4>
+  <span class="fill-space"></span>
+  <div style="font-size: 15px">
+		<mat-icon style="font-size: 22px;vertical-align: middle;">person</mat-icon>
+		{{nomeDoUsuario}}
+  </div>
+</mat-toolbar>
+<mat-progress-spinner *ngIf="loading" color="accent" mode="indeterminate">
+</mat-progress-spinner>
+<p>
+
+<button mat-button class="btn-space" routerLink="/blog">
+  <mat-icon style="font-size: 22px;vertical-align: middle;">list</mat-icon> 
+    Blog
+</button>
+<button mat-button class="btn-space" routerLink="/album-lista">
+  <mat-icon style="font-size: 22px;vertical-align: middle;">photo_library</mat-icon> 
+    Álbuns de fotos
+</button>
+<button mat-button class="btn-space" routerLink="/post">
+  <mat-icon style="font-size: 22px;vertical-align: middle;">post_add</mat-icon> 
+   Novo post
+</button>
+<button mat-button class="btn-space" routerLink="/album">
+  <mat-icon style="font-size: 22px;vertical-align: middle;">add_photo_alternate</mat-icon> 
+    Novo álbum
+</button>
+<button mat-button class="btn-space" routerLink="/usuario">
+  <mat-icon style="font-size: 22px;vertical-align: middle;">person_add</mat-icon> 
+   Novo usuário
+</button>
+<button mat-raised-button class="btn-space" color="warn" (click)="logout()" *ngIf=true>
+  <mat-icon style="font-size: 22px;vertical-align: middle;">exit_to_app</mat-icon> 
+   Logout
+</button>
+
+<router-outlet></router-outlet>

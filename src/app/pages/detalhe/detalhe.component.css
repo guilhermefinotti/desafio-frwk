@@ -1,0 +1,15 @@
+mat-form-field {
+    width: 80%;
+  }
+  mat-card{
+    margin:10px 0;
+    max-width: 700px;
+}
+mat-card-content{
+  padding-left: 8px;
+  padding-right: 8px;
+}
+mat-card-content:focus{
+    outline: none;
+    border: 0;
+}

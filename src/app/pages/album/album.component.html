@@ -1,0 +1,40 @@
+<section>
+  <div style="padding: 25px;">
+    <mat-accordion>
+      <mat-expansion-panel>
+        <mat-expansion-panel-header>
+          <mat-panel-title>
+            <h1>Cadastro de novo álbum de fotos!</h1>
+          </mat-panel-title>
+        </mat-expansion-panel-header>
+        <p>
+          <mat-form-field>
+            <input matInput placeholder="Titulo" [(ngModel)]="album.titulo" name="titulo" required>
+          </mat-form-field>
+          <p>
+            <mat-form-field>
+              <textarea matInput fullWidth placeholder="Descrição" [(ngModel)]="album.descricao" name="descricao" cols="80"
+                rows="5" maxlength="255" required></textarea>
+            </mat-form-field>
+            <p>
+              <div style="padding: 15px; background-color: LightBlue;">                
+                <label for="arquivo"><b>* Escolha as fotos para o novo álbum</b></label>
+                <p>
+                <input type="file" name="arquivo" id="file" (change)="uploadImage($event)" multiple>
+              </div>
+              <p>
+
+              <!--<button mat-raised-button color="accent" (click)="criar()">{{buttonText}}</button>-->
+              <button mat-raised-button class="btn-space" color="primary" (click)="criar()">
+                <mat-icon style="font-size: 22px;vertical-align: middle;">save</mat-icon> 
+                 Salvar
+              </button>
+              <span></span>
+              <button mat-raised-button color="warn" (click)="limpar()">
+                <mat-icon style="font-size: 22px;vertical-align: middle;">phonelink_erase</mat-icon> 
+                 Limpar
+              </button>
+      </mat-expansion-panel>
+    </mat-accordion>
+  </div>
+</section>

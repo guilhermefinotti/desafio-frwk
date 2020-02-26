@@ -1,0 +1,22 @@
+<section>
+      <mat-card>
+        <mat-card-header style="background-color: LightBlue;">
+            <mat-card-title><h3>Álbum: {{albumSelecionado.titulo}}</h3></mat-card-title>
+            <mat-card-subtitle>
+              <p><b>Criado por <u>{{albumSelecionado.usuario.nome}}</u></b></p>
+            </mat-card-subtitle>
+        </mat-card-header>
+        <mat-card-content>
+          <p>
+          <p>{{albumSelecionado.descricao}}</p>
+          <ngx-gallery [options]="galleryOptions" [images]="galleryImages"></ngx-gallery>
+        </mat-card-content>
+      </mat-card>
+  <br>
+
+  <button mat-raised-button color="accent" (click)="voltar()">
+    <mat-icon style="font-size: 22px;vertical-align: middle;">arrow_back</mat-icon> 
+     Voltar para a lista de álbuns
+  </button>
+
+</section>

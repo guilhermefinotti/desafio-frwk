@@ -1,0 +1,39 @@
+<mat-progress-spinner *ngIf="loading" color="accent" mode="indeterminate" style="margin:0 auto;"></mat-progress-spinner>
+<section>
+    <mat-card *ngFor=" let post of posts">
+
+        <mat-card-content>
+            <h2 >{{post.titulo}}</h2>
+            <p>
+            <p>{{post.texto}}</p>
+            <p>
+            <h5>Criado por: {{post.usuario.nome}} em {{post.dataHoraFormatada}}</h5>
+            <p>
+        </mat-card-content>
+
+        <mat-card-actions style="vertical-align: bottom;">
+            <button mat-raised-button class="btn-space" color="accent"
+                    matTooltip="Visualizar os detalhes do post"
+                    (click)="detalhar(post.id)">
+                    <mat-icon style="font-size: 22px;vertical-align: middle;">pageview</mat-icon>
+                Detalhes
+            </button>
+
+            <button mat-raised-button color="primary"
+                    matTooltip="Registrar novo comentário para o post" (click)="comentar(post.id)">
+                <mat-icon style="font-size: 22px;vertical-align: middle;">add_comment</mat-icon> 
+                Comentar
+            </button>
+
+            <button mat-raised-button color="warn" *ngIf="post.usuario.id == usuarioLogado.id"
+                    matTooltip="Excluir esse post" (click)="excluir(post.id)">
+                <mat-icon style="font-size: 22px;vertical-align: middle;">delete</mat-icon> 
+                Excluir
+            </button>
+
+        </mat-card-actions>
+        <p>
+    </mat-card>
+    
+
+</section>
